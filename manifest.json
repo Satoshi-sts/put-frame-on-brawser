@@ -1,0 +1,19 @@
+{
+  "name": "Put frame on brawser",
+  "description": "Put color frame on brwaser.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js", "jQuery.js", "jquery.easing.js"],
+    "persistent": false
+  },
+  "commands":{
+    "execute_script":{
+      "suggested_key":{
+        "default": "Ctrl+Shift+Y",
+        "mac": "MacCtrl+Shift+Y"
+      },
+      "description": "Send a 'execute_script' event to the extension"
+    }
+  }
+}
