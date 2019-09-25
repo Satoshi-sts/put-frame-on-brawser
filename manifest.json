@@ -3,17 +3,30 @@
   "description": "Put color frame on brwaser.",
   "version": "1.0",
   "manifest_version": 2,
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "browser_action": {
+    "default_popup": "html/popup.html",
+    "default_title": "Put frame on brawser"
+  },
   "background": {
-    "scripts": ["background.js", "jQuery.js", "jquery.easing.js"],
+    "scripts": ["js/background.js", "js/jQuery.js", "js/jquery.easing.js"],
     "persistent": false
   },
-  "commands":{
-    "execute_script":{
-      "suggested_key":{
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js", "js/jQuery.js", "js/jquery.easing.js"]
+    }
+  ],
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": {
         "default": "Ctrl+Shift+Y",
-        "mac": "MacCtrl+Shift+Y"
-      },
-      "description": "Send a 'execute_script' event to the extension"
+        "mac": "Command+Shift+Y"
+       },
+      "description": "Send a 'toggle-feature' event to the extension"
     }
   }
 }
