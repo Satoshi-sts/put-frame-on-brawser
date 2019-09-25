@@ -36,7 +36,7 @@ function main(){
         width: 10,
         height: 10,
         addClass: "added_frame_" + cnt,
-        css:{border: "5px solid " + color, position: "absolute", top: y, left: x}
+        css:{border: "5px solid " + color, position: "absolute", top: y, left: x, "z-index": 9999}
       });
       $('body').append(div);
 
